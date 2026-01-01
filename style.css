@@ -1,0 +1,79 @@
+/* --- CONFIGURACIÓN GENERAL (MODO OSCURO) --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a; /* Fondo casi negro */
+    color: #e0e0e0; /* Texto gris claro */
+    line-height: 1.6;
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+main, header, footer {
+    max-width: 800px; /* Ancho de lectura cómodo */
+    margin: 0 auto; /* Centrar en la pantalla */
+    padding: 20px;
+}
+
+/* --- TÍTULOS Y ENLACES --- */
+h1, h2, h3 {
+    color: #4da6ff; /* Azul eléctrico */
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ffcc00; /* Amarillo para resaltar enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- FOTO DE PERFIL --- */
+img {
+    border-radius: 50%; /* Círculo perfecto */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #4da6ff;
+    margin-top: 10px;
+}
+
+/* --- BADGES / ETIQUETAS (FLEXBOX) --- */
+/* Aquí está la magia moderna para tus habilidades */
+ul {
+    list-style: none; /* Quitamos los puntos feos */
+    padding: 0;
+    
+    display: flex; /* Activamos Flexbox */
+    flex-wrap: wrap; /* Permitimos que bajen de línea si no caben */
+    gap: 10px; /* Espacio entre cajitas */
+}
+
+li {
+    background-color: #333333; /* Fondo gris de la tarjeta */
+    padding: 8px 16px;
+    border-radius: 6px; /* Bordes suaves */
+    border-left: 4px solid #4da6ff; /* Detalle de color */
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra 3D */
+    transition: transform 0.2s ease; /* Animación suave */
+}
+
+/* Efecto al pasar el mouse */
+li:hover {
+    transform: translateY(-3px); /* Se levanta un poco */
+    background-color: #444;
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #888;
+}
