@@ -148,3 +148,79 @@ footer {
     justify-content: center;
   }
 }
+
+/* --- SECCIÓN DE PROYECTOS (GRID) --- */
+.project-grid {
+  display: grid;
+  /* MAGIA: Crea columnas automáticas. Si cabe, pone 2 o 3. Si no, 1. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* La Tarjeta Individual */
+.project-card {
+  background-color: #1e293b; /* Fondo tarjeta */
+  border-radius: 10px;
+  overflow: hidden; /* Para que la imagen no se salga de las esquinas */
+  border: 1px solid #334155;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Efecto de flotar */
+  border-color: #38bdf8; /* Borde cyan al pasar el mouse */
+}
+
+/* Imagen de la tarjeta */
+.card-image img {
+  width: 100%; /* Ocupa todo el ancho de la tarjeta */
+  height: 200px;
+  object-fit: cover;
+  display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+/* Contenido (Texto) */
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  color: #e2e8f0; /* Título blanco */
+  margin-top: 0;
+}
+
+.card-content p {
+  color: #94a3b8; /* Texto gris suave */
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* --- BOTONES PEQUEÑOS DE LA TARJETA --- */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-small {
+  padding: 8px 15px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  flex: 1; /* Para que ambos botones midan lo mismo */
+}
+
+.btn-small.outline {
+  background-color: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn-small:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
