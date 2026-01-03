@@ -42,4 +42,4 @@ Actualmente estoy trabajando en:
 📩 **Contáctame:** [ghostrider.cr24@gmail.com]
 
 ---
-*Desarrollado con 💻 y 🎵 por [Angel Gonzalez Soto / S.I.T.O.]*
+*Desarrollado con 💻 y 🎵 por Angel Gonzalez Soto / S.I.T.O.*
