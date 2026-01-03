@@ -1,4 +1,4 @@
-# 👨‍💻 Portafolio Front-End | [Angel Gonzalez Soto]
+# 👨‍💻 Portafolio Front-End | Angel Gonzalez Soto
 
 > *"Combinando lógica técnica con diseño creativo."*
 
@@ -8,7 +8,7 @@ Mi objetivo es crear experiencias web que no solo funcionen perfectamente, sino 
 
 ## 🚀 Ver Demo en Vivo
 Haz clic aquí para ver el sitio desplegado:
-👉 **[VER SITIO WEB: https://ghostridercr24.github.io/bootcamp-frontend/]**
+👉 **VER SITIO WEB: https://ghostridercr24.github.io/bootcamp-frontend/**
 
 ---
 
