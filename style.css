@@ -1,31 +1,58 @@
-/* --- CONFIGURACIÓN GENERAL (MODO OSCURO) --- */
+/* --- 1. FUENTES --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+/* --- 2. CONFIGURACIÓN GENERAL (MODO OSCURO) --- */
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1a1a1a; /* Fondo casi negro */
-  color: #e0e0e0; /* Texto gris claro */
+  font-family: "Poppins", sans-serif;
+  background-color: #0f172a; /* Fondo casi negro */
+  color: #e2e8f0; /* Texto gris claro */
   line-height: 1.6;
 }
 
-/* --- ESTRUCTURA PRINCIPAL --- */
+/* --- 3. ESTRUCTURA (LAYOUT) --- */
 main,
 footer {
-  max-width: 1000px; /* Ancho de lectura cómodo */
-  margin: 0 auto; /* Centrar en la pantalla */
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-/* --- TÍTULOS Y ENLACES --- */
-h1,
-h2,
-h3 {
-  color: #4da6ff; /* Azul eléctrico */
+header {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- 4. TIPOGRAFÍA Y COLORES (TU SELECCIÓN) --- */
+
+/* El Título (Tu Nombre) */
+h1 {
+  color: #38bdf8; /* Cyan brillante (match con gafas) */
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
+/* Los subtítulos (h2) */
+h2 {
+  color: #a78bfa; /* Violeta suave */
+  border-bottom: 2px solid #38bdf8; /* Línea decorativa Cyan */
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #38bdf8;
+}
+
+/* El enlace del correo y otros textos */
 a {
-  color: #ffcc00; /* Amarillo para resaltar enlaces */
+  color: #38bdf8;
   text-decoration: none;
   font-weight: bold;
 }
@@ -34,78 +61,90 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- FOTO DE PERFIL --- */
-img {
-  border-radius: 50%; /* Círculo perfecto */
+/* --- 5. FOTO DE PERFIL --- */
+header img {
+  border-radius: 50%;
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border: 3px solid #4da6ff;
+  /* Actualizado al Cyan para que combine */
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
   margin-top: 10px;
 }
 
-/* --- BADGES / ETIQUETAS (FLEXBOX) --- */
-/* Aquí está la magia moderna para tus habilidades */
-ul {
-  list-style: none; /* Quitamos los puntos feos */
-  padding: 0;
-
-  display: flex; /* Activamos Flexbox */
-  flex-wrap: wrap; /* Permitimos que bajen de línea si no caben */
-  gap: 10px; /* Espacio entre cajitas */
-}
-
-li {
-  background-color: #333333; /* Fondo gris de la tarjeta */
-  padding: 16px 36px;
-  border-radius: 6px; /* Bordes suaves */
-  border-left: 4px solid #4da6ff; /* Detalle de color */
-  font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra 3D */
-  transition: transform 0.2s ease; /* Animación suave */
-}
-
-/* Efecto al pasar el mouse */
-li:hover {
-  transform: translateY(-3px); /* Se levanta un poco */
-  background-color: #444;
-}
-
-/* --- PIE DE PÁGINA --- */
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-header {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20;
-
-  /* Logica de Flex */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* Truco para que el texto no pegue con la foto en las pantallas chicas */
 .header-text {
   padding-right: 20px;
 }
 
-/* --- RESPONSIVE DESIGN (Versión Móvil) --- */
-/* Traducción: "Si la pantalla mide 768px o menos (Tablets y Celulares)..." */
-@media (max-width: 768px) {
-    
-    header {
-        flex-direction: column; /* 1. Cambia de Fila (row) a Columna */
-        text-align: center; /* 2. Centra el texto */
-    }
+/* --- 6. TARJETAS DE HABILIDADES --- */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    .header-text {
-        padding-right: 0; /* Quitamos el espacio extra porque ya no hay nadie a la derecha */
-        margin-bottom: 20px; /* Empujamos la foto hacia abajo para que no pegue */
-    }
+li {
+  background-color: #1e293b;
+  padding: 12px 24px;
+  border-radius: 8px;
+  /* Borde izquierdo Cyan para combinar */
+  border-left: 4px solid #38bdf8;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  background-color: #334155;
+}
+
+/* --- 7. BOTÓN NEÓN (ACTUALIZADO AL CYAN) --- */
+.btn-neon {
+  display: inline-block;
+  background-color: transparent;
+  color: #38bdf8 !important; /* Cyan */
+  border: 2px solid #38bdf8; /* Borde Cyan */
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-top: 15px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background-color: #38bdf8;
+  color: #0f172a !important; /* Texto oscuro */
+  box-shadow: 0 0 20px #38bdf8; /* Brillo Cyan */
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* --- 8. PIE DE PÁGINA --- */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #334155;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* --- 9. RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .header-text {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  ul {
+    justify-content: center;
+  }
+}
