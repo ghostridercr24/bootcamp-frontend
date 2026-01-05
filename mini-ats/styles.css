@@ -131,3 +131,65 @@ td { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     color: white;
     border-radius: 6px;
 }
+
+/* =========================================
+   MOBILE RESPONSIVE (Fix para Celulares)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Quitamos la cuadrícula de 2 columnas */
+    .dashboard-container {
+        display: block; /* Los elementos se ponen uno sobre otro */
+        height: auto;   /* Permitimos scroll infinito */
+        overflow-y: visible;
+    }
+
+    /* 2. Transformamos la Barra Lateral en una Barra Superior simple */
+    .sidebar {
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sidebar nav {
+        display: none; /* Ocultamos el menú lateral en móvil para ahorrar espacio */
+    }
+    
+    .sidebar .logo {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+    
+    .back-link {
+        font-size: 0.8rem; /* Hacemos el link de volver más pequeño */
+    }
+
+    /* 3. Ajustamos el contenido principal */
+    .main-content {
+        padding: 1rem;
+        height: auto;
+    }
+
+    /* 4. Las tarjetas de estadísticas una debajo de otra */
+    .stats-grid {
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+
+    /* 5. Tabla con scroll horizontal (Para que no rompa la pantalla) */
+    .table-container {
+        overflow-x: auto; 
+    }
+    
+    table {
+        min-width: 500px; /* Asegura que la tabla tenga ancho suficiente aunque haya scroll */
+    }
+
+    /* 6. Modal ajustado al ancho del celular */
+    .modal-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
