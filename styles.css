@@ -1,22 +1,21 @@
-/* =========================================
-   1. VARIABLES & RESET
-   ========================================= */
 :root {
-    /* Color Palette */
-    --bg-color: #0f172a;       /* Dark Slate Blue */
-    --card-bg: #1e293b;        /* Lighter Slate for cards */
-    --text-main: #f8fafc;      /* Almost White */
-    --text-secondary: #94a3b8; /* Muted Grey */
-    --primary-color: #38bdf8;  /* Cyan */
-    --secondary-color: #818cf8;/* Indigo/Violet */
+    /* Color Palette Update: S.I.T.O. Galaxy Mode */
+    --bg-color: #0f172a;       
+    --card-bg: #1e293b;        
+    --text-main: #f8fafc;      
+    --text-secondary: #94a3b8; 
+    
+    /* AQUI ESTA EL CAMBIO: PURPLE IS KING */
+    --primary-color: #a855f7;  /* Galaxy Purple (Neon) */
+    --secondary-color: #38bdf8;/* Cyan (Ahora es solo secundario/apoyo) */
     
     /* Font */
     --font-main: 'Poppins', sans-serif;
     
     /* Effects */
-    --glass-bg: rgba(15, 23, 42, 0.7);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --glass-bg: rgba(15, 23, 42, 0.8); /* Un poco más oscuro para contraste */
+    --glass-border: 1px solid rgba(168, 85, 247, 0.2); /* Borde morado sutil */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -285,4 +284,21 @@ footer strong {
     .project-grid {
         grid-template-columns: 1fr;
     }
+}
+/* =========================================
+   NUEVO: CONTACT SECTION (FIX)
+   ========================================= */
+#contact {
+    text-align: center;
+    padding-bottom: 5rem; /* Esto empuja el footer hacia abajo (EL ESPACIO QUE FALTABA) */
+}
+
+#contact p {
+    margin-bottom: 3rem; /* Espacio entre el texto y el botón */
+    color: var(--text-secondary);
+}
+
+#contact .btn {
+    padding: 1rem 3rem;  /* Botón más grande */
+    margin-bottom: 2rem; /* Margen extra de seguridad */
 }
