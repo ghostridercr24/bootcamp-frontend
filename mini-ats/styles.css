@@ -133,63 +133,80 @@ td { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 }
 
 /* =========================================
-   MOBILE RESPONSIVE (Fix para Celulares)
+   MOBILE RESPONSIVE (SOLUCIÓN AGRESIVA)
    ========================================= */
-@media (max-width: 768px) {
-    /* 1. Quitamos la cuadrícula de 2 columnas */
-    .dashboard-container {
-        display: block; /* Los elementos se ponen uno sobre otro */
-        height: auto;   /* Permitimos scroll infinito */
-        overflow-y: visible;
+@media screen and (max-width: 768px) {
+    
+    /* 1. RESET TOTAL DEL LAYOUT */
+    body {
+        overflow-y: auto; /* Permitir scroll vertical normal */
     }
 
-    /* 2. Transformamos la Barra Lateral en una Barra Superior simple */
+    .dashboard-container {
+        display: flex;       /* Cambiamos Grid por Flex para control total */
+        flex-direction: column; /* Todo uno debajo del otro */
+        height: auto;        /* Altura automática, no forzada al 100vh */
+        width: 100%;         /* Ancho exacto de la pantalla */
+        overflow-x: hidden;  /* Prohibido scroll horizontal en el contenedor */
+    }
+
+    /* 2. SIDEBAR (Ahora es una barra superior delgada) */
     .sidebar {
+        width: 100%;
+        height: auto;
         padding: 1rem;
+        flex-direction: row; /* Elementos en fila */
+        align-items: center;
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     .sidebar nav {
-        display: none; /* Ocultamos el menú lateral en móvil para ahorrar espacio */
+        display: none; /* Adiós menú lateral en móvil */
     }
-    
+
     .sidebar .logo {
         margin-bottom: 0;
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Logo más pequeño */
     }
     
     .back-link {
-        font-size: 0.8rem; /* Hacemos el link de volver más pequeño */
+        font-size: 0.8rem;
     }
 
-    /* 3. Ajustamos el contenido principal */
+    /* 3. CONTENIDO PRINCIPAL */
     .main-content {
+        width: 100%;
         padding: 1rem;
-        height: auto;
     }
 
-    /* 4. Las tarjetas de estadísticas una debajo de otra */
+    header {
+        flex-direction: column; /* Título arriba, botón abajo */
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    /* 4. TARJETAS DE ESTADÍSTICAS */
     .stats-grid {
-        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: column; /* Una debajo de otra */
         gap: 1rem;
     }
 
-    /* 5. Tabla con scroll horizontal (Para que no rompa la pantalla) */
+    /* 5. TABLA (El villano principal) */
     .table-container {
-        overflow-x: auto; 
+        width: 100%;
+        overflow-x: auto; /* Permite scroll SOLO dentro de la tabla */
+        border: 1px solid rgba(255,255,255,0.1);
     }
     
     table {
-        min-width: 500px; /* Asegura que la tabla tenga ancho suficiente aunque haya scroll */
+        min-width: 600px; /* Fuerza a la tabla a ser ancha (el usuario deslizará el dedo) */
     }
 
-    /* 6. Modal ajustado al ancho del celular */
+    /* 6. MODAL */
     .modal-content {
-        width: 90%;
-        padding: 1.5rem;
+        width: 95%; /* Ocupa casi toda la pantalla */
+        margin: 10px;
     }
 }
