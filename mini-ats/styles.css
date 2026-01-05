@@ -133,82 +133,85 @@ td { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 }
 
 /* =========================================
-   MOBILE RESPONSIVE (SOLUCIÓN AGRESIVA)
+   MOBILE RESPONSIVE (VERSIÓN FINAL DESBLOQUEADA)
    ========================================= */
 @media screen and (max-width: 768px) {
     
-    /* 1. RESET TOTAL DEL LAYOUT */
-    body {
-        overflow-y: auto; /* Permitir scroll vertical normal */
+    /* 1. LIBERAR EL SCROLL (El truco definitivo) */
+    html, body {
+        height: auto !important;     /* Deja que la página crezca lo que necesite */
+        overflow-y: visible !important; /* Scroll nativo del navegador */
     }
 
+    /* 2. CONTENEDOR FLEXIBLE */
     .dashboard-container {
-        display: flex;       /* Cambiamos Grid por Flex para control total */
-        flex-direction: column; /* Todo uno debajo del otro */
-        height: auto;        /* Altura automática, no forzada al 100vh */
-        width: 100%;         /* Ancho exacto de la pantalla */
-        overflow-x: hidden;  /* Prohibido scroll horizontal en el contenedor */
+        display: flex;       
+        flex-direction: column; 
+        height: auto !important; /* Importante para romper el límite de PC */
+        width: 100%;         
+        overflow: visible;   /* Que nada se esconda */
     }
 
-    /* 2. SIDEBAR (Ahora es una barra superior delgada) */
+    /* 3. SIDEBAR (Barra Superior) */
     .sidebar {
         width: 100%;
         height: auto;
         padding: 1rem;
-        flex-direction: row; /* Elementos en fila */
+        flex-direction: row; 
         align-items: center;
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        flex-shrink: 0; /* Evita que se aplaste */
     }
 
-    .sidebar nav {
-        display: none; /* Adiós menú lateral en móvil */
-    }
+    .sidebar nav { display: none; }
 
     .sidebar .logo {
         margin-bottom: 0;
-        font-size: 1.1rem; /* Logo más pequeño */
+        font-size: 1.1rem; 
     }
     
-    .back-link {
-        font-size: 0.8rem;
-    }
+    .back-link { font-size: 0.8rem; }
 
-    /* 3. CONTENIDO PRINCIPAL */
+    /* 4. CONTENIDO PRINCIPAL */
     .main-content {
         width: 100%;
         padding: 1rem;
-        padding-bottom: 120px; /* <--- AQUÍ ESTÁ LA MAGIA */
-        min-height: 100vh;
+        padding-bottom: 150px; /* Aumenté esto para estar 100% seguros */
+        overflow: visible; /* Quitamos el scroll interno para usar el del body */
+        height: auto;
     }
 
     header {
-        flex-direction: column; /* Título arriba, botón abajo */
+        flex-direction: column; 
         gap: 1rem;
         align-items: flex-start;
     }
     
-    /* 4. TARJETAS DE ESTADÍSTICAS */
+    /* 5. TARJETAS */
     .stats-grid {
         display: flex;
-        flex-direction: column; /* Una debajo de otra */
+        flex-direction: column; 
         gap: 1rem;
     }
 
-    /* 5. TABLA (El villano principal) */
+    /* 6. TABLA (Scroll horizontal) */
     .table-container {
         width: 100%;
-        overflow-x: auto; /* Permite scroll SOLO dentro de la tabla */
+        overflow-x: auto; 
         border: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 2rem; /* Espacio extra debajo de la tabla */
     }
     
     table {
-        min-width: 600px; /* Fuerza a la tabla a ser ancha (el usuario deslizará el dedo) */
+        min-width: 600px; 
     }
 
-    /* 6. MODAL */
+    /* 7. MODAL */
     .modal-content {
-        width: 95%; /* Ocupa casi toda la pantalla */
+        width: 95%; 
         margin: 10px;
+        max-height: 90vh; /* Para que no se salga de la pantalla si es muy alto */
+        overflow-y: auto;
     }
 }
