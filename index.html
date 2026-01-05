@@ -1,187 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV - Angel Gonzalez Soto</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="header-text">
-        <h1 id="titulo-nombre">Angel Gonzalez Soto</h1>
-        <button onclick="activarModoHacker()" class="btn-neon">
-          ⚠️ Activar Sistema
-      </button>
-      <p id="mensaje-bienvenida" style="font-size: 20px; font-weight: bold;"></p>
-        <p><strong>Front-End Developer | HTML & CSS Specialist</strong></p>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Angel Gonzalez Soto, Front-End Developer.">
+    <title>Portfolio | Angel Gonzalez Soto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-      <img
-        src="profile.png"
-        alt="Foto de perfil artística de Angel I. Gonzalez Soto"
-      />
+    <header>
+        <nav>
+            <div class="logo">S.I.T.O. Dev</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-      <section>
-        <h2>Professional Profile</h2>
-        <p>
-          Developer focused on building clean, semantic, and efficient web
-          interfaces. Proven experience in logical analysis and complex
-          problem-solving within corporate environments (COSVI), now leveraging
-          those analytical skills for web architecture and software development.
-        </p>
-      </section>
-
-      <section>
-        <h2>Technical Skills</h2>
-        <ul>
-          <li>
-            <strong>Web Development:</strong> Semantic HTML5, CSS3, DOM
-            Structure.
-          </li>
-          <li><strong>Tools:</strong> Git, GitHub, VS Code.</li>
-          <li>
-            <strong>Soft Skills:</strong> Data Analysis, Critical Problem
-            Solving, Attention to Detail.
-          </li>
-        </ul>
-      </section>
-
-      <section id="services">
-        <h2>Professional Focus</h2>
-        <p>My core responsibilities and value proposition.</p>
-
-        <ul>
-          <li>
-            <strong>Web Development:</strong> Develop, launch, and maintain
-            websites of varying sizes, ensuring scalability, performance, and
-            usability.
-          </li>
-          <li>
-            <strong>UI/UX Execution:</strong> Drive planning and execution,
-            making smart design decisions when guidance is limited.
-          </li>
-          <li>
-            <strong>Code Quality:</strong> Adhere to high Frontend standards,
-            prioritizing accessibility, responsiveness, and maintainability.
-          </li>
-          <li>
-            <strong>Optimization:</strong> Troubleshoot technical issues and
-            bugs, ensuring smooth and efficient site performance.
-          </li>
-          <li>
-            <strong>Documentation:</strong> Contribute to core codebase and
-            docs, improving internal processes and best practices.
-          </li>
-          <li>
-            <strong>Collaboration:</strong> Partner with developers, designers,
-            and writers to produce high-quality web products.
-          </li>
-          <li>
-            <strong>Team Culture:</strong> Maintain clear communication,
-            supporting company goals and fostering a collaborative environment.
-          </li>
-        </ul>
-      </section>
-
-      <section id="projects">
-        <h2>My Projects</h2>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="card-image">
-              <img
-                src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1000&auto=format&fit=crop"
-                alt="Preview del Proyecto Portfolio"
-              />
-            </div>
-            <div class="card-content">
-              <h3>HTML & CSS Portfolio</h3>
-              <p>
-                A responsive personal portfolio website featuring Dark Mode,
-                Flexbox layout, and mobile-first design.
-              </p>
-              <div class="card-buttons">
-                <a href="#" class="btn-small">Live Demo</a>
-                <a href="#" class="btn-small outline">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="card-image">
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
-                alt="Dashboard Preview"
-              />
-            </div>
-            <div class="card-content">
-              <h3>E-Commerce Dashboard</h3>
-              <p>
-                Upcoming project using JavaScript to manage inventory data and
-                visualize sales metrics in real-time.
-              </p>
-              <div class="card-buttons">
-                <a href="#" class="btn-small">In Progress</a>
-                <a href="#" class="btn-small outline">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="card-image">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
-                alt="Marketing Site Preview"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Landing Page Clone</h3>
-              <p>
-                Recreation of a popular product landing page to master CSS Grid
-                and positioning techniques.
-              </p>
-              <div class="card-buttons">
-                <a href="#" class="btn-small">Live Demo</a>
-                <a href="#" class="btn-small outline">Code</a>
-              </div>
-            </div>
-          </article>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Angel Gonzalez Soto</span></h1>
+            <p>Front-End Developer | Building Digital Experiences</p>
+            <a href="#projects" class="btn">View My Work</a>
         </div>
-      </section>
+    </section>
 
-      <section>
-        <h2>Relevant Experience</h2>
-        <h3>Policy & Claims Analyst - COSVI</h3>
-        <p>
-          Managed high-impact business logic and case analysis. Translated
-          complex policy requirements into actionable resolutions, demonstrating
-          the logical reasoning required for effective debugging and structured
-          coding.
-        </p>
-      </section>
-    </main>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            
+            <article class="project-card">
+                <h3>Mini ATS Dashboard</h3>
+                <p>A user interface for managing candidates and recruitment processes.</p>
+                <div class="tags">
+                    <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+                </div>
+                <div class="links">
+                    <a href="#">View Code</a>
+                    <a href="#">Live Demo</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>This personal portfolio designed with a mobile-first approach.</p>
+                <div class="tags">
+                    <span>HTML</span> <span>CSS</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3 (Flexbox/Grid)</div>
+            <div class="skill-item">JavaScript (ES6+)</div>
+            <div class="skill-item">Git & GitHub</div>
+            <div class="skill-item">VS Code</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p>Currently looking for new opportunities. Send me an email!</p>
+        <a href="mailto:ghostrider.cr24@gmail.com" class="btn btn-outline">Send Email</a>
+    </section>
 
     <footer>
-      <h2>Contact</h2>
-      <p>Email: ghostrider.cr24@gmail.com</p>
-
-      <p>
-        <a href="https://github.com/ghostridercr24" target="_blank">GitHub</a>
-      </p>
-
-      <p>© 2026 Built by Angel Gonzalez Soto</p>
+        <p>&copy; 2026 Designed and Coded by <strong>Angel Gonzalez Soto (S.I.T.O.)</strong></p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="index.js"></script>
 </body>
-</html>
-  </body>
 </html>
