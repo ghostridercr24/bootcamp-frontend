@@ -1,45 +1,43 @@
 # 👨‍💻 Portafolio Front-End | Angel Gonzalez Soto
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+
 > *"Combinando lógica técnica con diseño creativo."*
 
-Bienvenido a mi portafolio profesional. Este proyecto ha sido construido desde cero para demostrar mis habilidades en **Desarrollo Front-End**, con un enfoque especial en diseño UI moderno, accesibilidad y estética visual (Dark Mode).
+Bienvenido a la versión 1.0 de mi portafolio profesional. Este proyecto es una demostración práctica de mis capacidades en **Desarrollo Front-End**, diseñado con un enfoque "Mobile First" y priorizando la experiencia de usuario (UX) mediante una estética moderna y funcional.
 
-Mi objetivo es crear experiencias web que no solo funcionen perfectamente, sino que también tengan identidad y carácter.
+## 🚀 Despliegue (Demo en Vivo)
+Puedes visualizar el proyecto funcionando en tiempo real aquí:
 
-## 🚀 Ver Demo en Vivo
-Haz clic aquí para ver el sitio desplegado:
-👉 **VER SITIO WEB: https://ghostridercr24.github.io/bootcamp-frontend/**
-
----
-
-## 🛠 Stack Tecnológico
-Este portafolio demuestra mi dominio de las tecnologías fundamentales del desarrollo web moderno:
-
-* **HTML5 Semántico:** Estructura limpia, SEO-friendly y accesible.
-* **CSS3 Avanzado:**
-    * **Layouts:** Uso experto de **Flexbox** y **CSS Grid** para diseños responsive.
-    * **Estilización:** Variables CSS (Custom Properties) para gestión de temas.
-    * **Diseño Visual:** Implementación de estética "Glassmorphism" y efectos de neón.
-    * **Tipografía:** Integración de Google Fonts ('Poppins') para legibilidad moderna.
-* **Control de Versiones:** Gestión de código con **Git** y **GitHub**.
+👉 **[VISITAR PORTAFOLIO ONLINE](https://ghostridercr24.github.io/bootcamp-frontend/)**
 
 ---
 
-## 🎨 Concepto de Diseño (S.I.T.O. Style)
-A diferencia de los portafolios estándar, decidí implementar una identidad visual propia:
+## 🛠 Stack Tecnológico & Herramientas
+Este repositorio refleja mi dominio actual de las tecnologías web fundamentales:
 
-* **Dark Mode Nativo:** Una paleta de colores oscuro (`#0f172a`) optimizada para reducir la fatiga visual.
-* **Acentos de Color:** Uso de Cyan (`#38bdf8`) y Violeta para guiar la atención del usuario (Call-to-Action).
-* **Responsive Design:** La interfaz se adapta fluidamente desde móviles hasta pantallas de escritorio.
+### Core
+* **HTML5 Semántico:** Arquitectura de información optimizada para SEO y Accesibilidad (A11y).
+* **CSS3 Moderno:**
+    * **Layouts:** Implementación de **CSS Grid** y **Flexbox** para estructuras complejas y responsivas.
+    * **Custom Properties:** Uso de variables CSS (`--color-primary`) para un mantenimiento escalable.
+    * **Animaciones:** Transiciones suaves (`hover`, `focus`) para micro-interacciones.
 
-## 🚧 Próximos Pasos
-Actualmente estoy trabajando en:
-* Implementación de **JavaScript** para interactividad avanzada.
-* Optimización de rendimiento (Lighthouse).
+### Diseño & Estilo (S.I.T.O. UI)
+* **Glassmorphism:** Estilización de componentes con efectos de transparencia y desenfoque (`backdrop-filter`).
+* **Dark Mode Nativo:** Paleta de colores `#0f172a` optimizada para confort visual.
+* **Tipografía:** Integración de Google Fonts ('Poppins') para una legibilidad moderna.
 
 ---
-**¿Buscas un Front-End Developer con ojo para el diseño?**
-📩 **Contáctame:** [ghostrider.cr24@gmail.com]
 
----
-*Desarrollado con 💻 y 🎵 por Angel Gonzalez Soto / S.I.T.O.*
+## 📂 Estructura del Proyecto
+El código está organizado siguiendo buenas prácticas para facilitar su escalabilidad:
+
+```text
+/
+├── index.html        # Estructura semántica principal
+├── styles.css        # Hoja de estilos (Desktop & Mobile)
+├── /assets           # Recursos multimedia (imágenes, iconos)
+└── README.md         # Documentación del proyecto
