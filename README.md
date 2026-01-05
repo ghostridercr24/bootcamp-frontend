@@ -1,43 +1,43 @@
-# 👨‍💻 Portafolio Front-End | Angel Gonzalez Soto
+# 👨‍💻 Front-End Portfolio | Angel Gonzalez Soto
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-> *"Combinando lógica técnica con diseño creativo."*
+> *"Combining technical logic with creative design."*
 
-Bienvenido a la versión 1.0 de mi portafolio profesional. Este proyecto es una demostración práctica de mis capacidades en **Desarrollo Front-End**, diseñado con un enfoque "Mobile First" y priorizando la experiencia de usuario (UX) mediante una estética moderna y funcional.
+Welcome to version 1.0 of my professional portfolio. This project is a practical demonstration of my **Front-End Development** capabilities, designed with a "Mobile First" approach and prioritizing User Experience (UX) through a modern and functional aesthetic.
 
-## 🚀 Despliegue (Demo en Vivo)
-Puedes visualizar el proyecto funcionando en tiempo real aquí:
+## 🚀 Deployment (Live Demo)
+You can view the project running in real-time here:
 
-👉 **[VISITAR PORTAFOLIO ONLINE](https://ghostridercr24.github.io/bootcamp-frontend/)**
+👉 **[VISIT ONLINE PORTFOLIO](https://ghostridercr24.github.io/bootcamp-frontend/)**
 
 ---
 
-## 🛠 Stack Tecnológico & Herramientas
-Este repositorio refleja mi dominio actual de las tecnologías web fundamentales:
+## 🛠 Tech Stack & Tools
+This repository reflects my current mastery of fundamental web technologies:
 
 ### Core
-* **HTML5 Semántico:** Arquitectura de información optimizada para SEO y Accesibilidad (A11y).
-* **CSS3 Moderno:**
-    * **Layouts:** Implementación de **CSS Grid** y **Flexbox** para estructuras complejas y responsivas.
-    * **Custom Properties:** Uso de variables CSS (`--color-primary`) para un mantenimiento escalable.
-    * **Animaciones:** Transiciones suaves (`hover`, `focus`) para micro-interacciones.
+* **Semantic HTML5:** Information architecture optimized for SEO and Accessibility (A11y).
+* **Modern CSS3:**
+    * **Layouts:** Implementation of **CSS Grid** and **Flexbox** for complex and responsive structures.
+    * **Custom Properties:** Use of CSS variables (`--color-primary`) for scalable maintenance.
+    * **Animations:** Smooth transitions (`hover`, `focus`) for micro-interactions.
 
-### Diseño & Estilo (S.I.T.O. UI)
-* **Glassmorphism:** Estilización de componentes con efectos de transparencia y desenfoque (`backdrop-filter`).
-* **Dark Mode Nativo:** Paleta de colores `#0f172a` optimizada para confort visual.
-* **Tipografía:** Integración de Google Fonts ('Poppins') para una legibilidad moderna.
+### Design & Style (S.I.T.O. UI)
+* **Glassmorphism:** Component styling with transparency and blur effects (`backdrop-filter`).
+* **Native Dark Mode:** Color palette `#0f172a` optimized for visual comfort.
+* **Typography:** Integration of Google Fonts ('Poppins') for modern readability.
 
 ---
 
-## 📂 Estructura del Proyecto
-El código está organizado siguiendo buenas prácticas para facilitar su escalabilidad:
+## 📂 Project Structure
+The code is organized following best practices to facilitate scalability:
 
 ```text
 /
-├── index.html        # Estructura semántica principal
-├── styles.css        # Hoja de estilos (Desktop & Mobile)
-├── /assets           # Recursos multimedia (imágenes, iconos)
-└── README.md         # Documentación del proyecto
+├── index.html        # Main semantic structure
+├── styles.css        # Stylesheet (Desktop & Mobile)
+├── /assets           # Multimedia resources (images, icons)
+└── README.md         # Project documentation
