@@ -276,13 +276,57 @@ footer strong {
 /* =========================================
    8. RESPONSIVE
    ========================================= */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2.5rem;
+/* =========================================
+   RESPONSIVE & MOBILE MENU
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Ajustar el botón de menú */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
     }
     
-    .project-grid {
-        grid-template-columns: 1fr;
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--text-main);
+    }
+
+    /* 2. Esconder y estilizar la lista de enlaces */
+    nav ul {
+        position: fixed;
+        left: -100%; /* Lo escondemos fuera de la pantalla a la izquierda */
+        top: 70px;   /* Debajo del header */
+        flex-direction: column;
+        background-color: var(--bg-color); /* Fondo sólido */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 2rem;
+    }
+
+    /* 3. Clase activa (Cuando JS la activa) */
+    nav ul.active {
+        left: 0; /* ¡Aparece! */
+    }
+
+    nav ul li {
+        margin: 2.5rem 0;
+    }
+    
+    /* 4. Animación del botón a una "X" */
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 /* =========================================
@@ -301,4 +345,7 @@ footer strong {
 #contact .btn {
     padding: 1rem 3rem;  /* Botón más grande */
     margin-bottom: 2rem; /* Margen extra de seguridad */
+}
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
 }
