@@ -315,3 +315,6 @@ input, select {
         margin: 20px;
     }
 }
+html {
+    scroll-behavior: smooth;
+}
