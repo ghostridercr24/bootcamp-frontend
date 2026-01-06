@@ -3,54 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.I.T.O. ATS | Candidate Dashboard</title>
+    <title>SITO ATS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="dashboard-container">
         
-        <aside class="sidebar">
-            <div class="logo">S.I.T.O. ATS</div>
-            <nav>
-                <ul>
-                    <li class="active"><i class="fas fa-users"></i> Candidates</li>
-                    <li><i class="fas fa-chart-pie"></i> Analytics (Soon)</li>
-                    <li><i class="fas fa-cog"></i> Settings</li>
-                </ul>
-            </nav>
-            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-        </aside>
+        <nav class="sidebar">
+            <div class="logo">🚀 SITO ATS</div>
+            <ul class="menu">
+                <li class="active"><i class="fas fa-users"></i> Candidates</li>
+                <li><i class="fas fa-chart-line"></i> Analytics</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </nav>
 
         <main class="main-content">
+            
             <header>
-                <h1>Candidate Management</h1>
-                <button id="add-btn" class="btn-primary"><i class="fas fa-plus"></i> Add Candidate</button>
+                <div class="header-title">
+                    <h1>Talent Base</h1>
+                </div>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Search by name...">
+                    </div>
+                    <button id="add-btn" class="btn-neon">+ New Candidate</button>
+                </div>
             </header>
 
             <div class="stats-grid">
-                <div class="card stat-card">
+                <div class="card">
                     <h3>Total Candidates</h3>
-                    <p id="total-count">0</p>
+                    <p class="number" id="count-total">0</p>
                 </div>
-                <div class="card stat-card">
-                    <h3>Interviews</h3>
-                    <p>0</p>
+                <div class="card">
+                    <h3>In Interview</h3>
+                    <p class="number" id="count-interview">0</p>
                 </div>
-                <div class="card stat-card">
+                <div class="card">
                     <h3>Hired</h3>
-                    <p>0</p>
+                    <p class="number" id="count-hired" style="color: #00ff88;">0</p>
                 </div>
             </div>
 
-            <div class="card table-container">
-                <table>
+            <div class="table-container">
+                <table class="ats-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Role</th>
+                            <th>Candidate Name</th>
+                            <th>Position</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -58,43 +65,46 @@
                     <tbody id="candidate-list">
                         </tbody>
                 </table>
+                
                 <div id="empty-state" class="empty-message">
-                    No candidates yet. Add one to start!
+                    <i class="fas fa-folder-open"></i>
+                    <p>No candidates found.</p>
                 </div>
             </div>
+
         </main>
     </div>
 
-    <div id="modal" class="modal">
+    <div id="modal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Add New Candidate</h2>
             <form id="ats-form">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" id="name" required placeholder="Ex: John Doe">
+                    <input type="text" id="name" placeholder="Ex: Satoru Gojo" required>
                 </div>
+                
                 <div class="form-group">
                     <label>Position</label>
-                    <select id="position">
-                        <option value="Front-End Dev">Front-End Dev</option>
-                        <option value="Back-End Dev">Back-End Dev</option>
-                        <option value="UI/UX Designer">UI/UX Designer</option>
-                    </select>
+                    <input type="text" id="position" placeholder="Ex: Frontend Dev" required>
                 </div>
+
                 <div class="form-group">
                     <label>Status</label>
                     <select id="status">
-                        <option value="Pending">Pending</option>
                         <option value="Interview">Interview</option>
+                        <option value="Technical">Technical Test</option>
                         <option value="Hired">Hired</option>
+                        <option value="Rejected">Rejected</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary">Save Candidate</button>
+
+                <button type="submit" class="btn-neon full-width">Save Candidate</button>
             </form>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

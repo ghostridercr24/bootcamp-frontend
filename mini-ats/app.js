@@ -6,41 +6,65 @@ const addBtn = document.getElementById('add-btn');
 const closeBtn = document.querySelector('.close-btn');
 const form = document.getElementById('ats-form');
 const tableBody = document.getElementById('candidate-list');
-const totalCount = document.getElementById('total-count');
+const emptyState = document.getElementById('empty-state');
+const searchInput = document.getElementById('search-input');
 
-// 2. Initialize Data (Load from LocalStorage or start empty)
+// 2. Initialize Data
 let candidates = JSON.parse(localStorage.getItem('candidates')) || [];
 
 // 3. Functions
 
-// Update the UI (Table & Counters)
-function renderCandidates() {
-    tableBody.innerHTML = ''; // Clear table
-    
-    // Update Stats
-    totalCount.innerText = candidates.length;
-    // (Here you could add logic to count 'Hired' or 'Interview' for other cards)
+// NEW: Update Dashboard Statistics (KPIs)
+function updateStats() {
+    // 1. Total Count
+    const total = candidates.length;
+    if(document.getElementById('count-total')) {
+        document.getElementById('count-total').innerText = total;
+    }
 
-    // Show/Hide "Empty State" message
-    const emptyState = document.getElementById('empty-state');
-    if (candidates.length === 0) {
-        emptyState.style.display = 'block';
+    // 2. Interview Count
+    const interviewCount = candidates.filter(c => c.status === 'Interview').length;
+    if(document.getElementById('count-interview')) {
+        document.getElementById('count-interview').innerText = interviewCount;
+    }
+
+    // 3. Hired Count
+    const hiredCount = candidates.filter(c => c.status === 'Hired').length;
+    if(document.getElementById('count-hired')) {
+        document.getElementById('count-hired').innerText = hiredCount;
+    }
+}
+
+// Render the Table
+function renderCandidates(data = candidates) {
+    // First, update the stats cards
+    updateStats();
+
+    // Then, clear table
+    tableBody.innerHTML = ''; 
+
+    // Handle Empty State
+    if (data.length === 0) {
+        if(emptyState) emptyState.style.display = 'block';
     } else {
-        emptyState.style.display = 'none';
+        if(emptyState) emptyState.style.display = 'none';
         
-        // Loop through candidates and create rows
-        candidates.forEach((candidate, index) => {
+        // Loop through data
+        data.forEach((candidate) => {
+            const realIndex = candidates.indexOf(candidate);
             const row = document.createElement('tr');
             
             row.innerHTML = `
                 <td>
-                    <div style="font-weight:bold;">${candidate.name}</div>
-                    <div style="font-size:0.8rem; color:#94a3b8;">${candidate.email || 'No email'}</div>
+                    <div style="font-weight:600; color: #fff;">${candidate.name}</div>
+                    <div style="font-size:0.8rem; color:#666;">${candidate.email}</div>
                 </td>
-                <td>${candidate.position}</td>
-                <td><span class="status ${candidate.status}">${candidate.status}</span></td>
+                <td style="color: #bbb;">${candidate.position}</td>
                 <td>
-                    <button class="delete-btn" onclick="deleteCandidate(${index})">
+                    <span class="status ${candidate.status}">${candidate.status}</span>
+                </td>
+                <td>
+                    <button class="delete-btn" onclick="deleteCandidate(${realIndex})">
                         <i class="fas fa-trash"></i>
                     </button>
                 </td>
@@ -50,58 +74,67 @@ function renderCandidates() {
     }
 }
 
-// Add New Candidate
+// Search Filter
+function searchTable(e) {
+    const term = e.target.value.toLowerCase();
+    const filteredList = candidates.filter(candidate => 
+        candidate.name.toLowerCase().includes(term) || 
+        candidate.position.toLowerCase().includes(term)
+    );
+    renderCandidates(filteredList);
+}
+
+// Add Candidate
 function addCandidate(e) {
-    e.preventDefault(); // Stop form from refreshing page
+    e.preventDefault();
 
     const newCandidate = {
         name: document.getElementById('name').value,
         position: document.getElementById('position').value,
         status: document.getElementById('status').value,
-        email: `candidate${candidates.length + 1}@example.com` // Fake email generator
+        email: `candidate.${Date.now()}@ats.com`
     };
 
-    candidates.push(newCandidate); // Add to array
-    saveData(); // Save to LocalStorage
-    renderCandidates(); // Update screen
-    toggleModal(); // Close modal
-    form.reset(); // Clear form
+    candidates.push(newCandidate);
+    saveData();
+    renderCandidates();
+    toggleModal();
+    form.reset();
 }
 
 // Delete Candidate
 window.deleteCandidate = function(index) {
     if(confirm('Are you sure you want to delete this candidate?')) {
-        candidates.splice(index, 1); // Remove from array
+        candidates.splice(index, 1);
         saveData();
-        renderCandidates();
+        
+        // Refresh view keeping search context
+        if(searchInput.value !== '') {
+            searchInput.dispatchEvent(new Event('keyup'));
+        } else {
+            renderCandidates();
+        }
     }
 }
 
-// Save to Browser Memory
+// Utils
 function saveData() {
     localStorage.setItem('candidates', JSON.stringify(candidates));
 }
 
-// Toggle Modal (Open/Close)
 function toggleModal() {
-    if (modal.style.display === 'flex') {
-        modal.style.display = 'none';
-    } else {
-        modal.style.display = 'flex';
-    }
+    modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
 }
 
 // 4. Event Listeners
-addBtn.addEventListener('click', toggleModal);
-closeBtn.addEventListener('click', toggleModal);
-form.addEventListener('submit', addCandidate);
+if(addBtn) addBtn.addEventListener('click', toggleModal);
+if(closeBtn) closeBtn.addEventListener('click', toggleModal);
+if(form) form.addEventListener('submit', addCandidate);
+if(searchInput) searchInput.addEventListener('keyup', searchTable);
 
-// Close modal if clicking outside
 window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        toggleModal();
-    }
+    if (e.target === modal) toggleModal();
 });
 
-// 5. Initial Render
+// 5. Initial Start
 renderCandidates();
