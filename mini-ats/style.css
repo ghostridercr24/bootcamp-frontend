@@ -248,3 +248,70 @@ input, select {
 }
 
 .full-width { width: 100%; margin-top: 10px; }
+
+/* --- RESPONSIVE MOBILE DESIGN (Add to end of CSS) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Cambiar Layout: De lado a lado -> Arriba y abajo */
+    .dashboard-container {
+        flex-direction: column; /* Sidebar arriba, contenido abajo */
+        height: auto; /* Altura automática para permitir scroll */
+    }
+
+    /* 2. Sidebar: Se convierte en barra de navegación superior */
+    .sidebar {
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #333;
+        padding: 15px;
+    }
+
+    .menu {
+        display: flex; /* Menú horizontal */
+        justify-content: space-around; /* Espaciado uniforme */
+    }
+
+    .menu li {
+        padding: 10px;
+        font-size: 12px; /* Letra más pequeña */
+        flex-direction: column; /* Icono arriba, texto abajo */
+        text-align: center;
+    }
+
+    /* 3. Stats Cards: Una debajo de otra */
+    .stats-grid {
+        flex-direction: column;
+    }
+
+    /* 4. Header: Reorganizar elementos */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-box, #search-input {
+        width: 100%; /* Buscador ancho completo */
+    }
+
+    /* 5. Tabla: Scroll horizontal si no cabe */
+    .table-container {
+        overflow-x: auto; /* Permite deslizar la tabla con el dedo */
+    }
+
+    .ats-table th, .ats-table td {
+        white-space: nowrap; /* Evita que el texto de la tabla se rompa feo */
+    }
+    
+    /* 6. Modal: Ajustar márgenes para móviles */
+    .modal-content {
+        width: 90%; /* Ocupa casi toda la pantalla */
+        margin: 20px;
+    }
+}
